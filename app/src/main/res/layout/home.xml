@@ -1,0 +1,301 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <!-- ScrollView cu conținutul aplicației -->
+    <ScrollView
+        android:id="@+id/scroll_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_nav">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- HEADER -->
+            <FrameLayout
+                android:id="@+id/container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:id="@+id/up_nav"
+                    android:layout_width="match_parent"
+                    android:layout_height="162dp"
+                    android:background="@drawable/gradient"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/main_text"
+                        android:layout_width="221dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="-120dp"
+                        android:fontFamily="@font/fontprincipal"
+                        android:gravity="left"
+                        android:text="Bine ati venit la MyOwly!"
+                        android:textColor="@color/purpledark"
+                        android:textSize="22sp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/logo_image"
+                    android:layout_width="241dp"
+                    android:layout_height="234dp"
+                    android:layout_marginStart="210dp"
+                    android:layout_marginTop="-20dp"
+                    android:contentDescription="Logo MyOwly"
+                    android:src="@drawable/asistentaibufni" />
+            </FrameLayout>
+
+            <!-- CONT CURENT -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/fontprincipal"
+                android:text="Cont curent"
+                android:textColor="@color/purpledark"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/suma_cont_curent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/fontprincipal"
+                android:text="1234.56 LEI"
+                android:textColor="@color/purpledark"
+                android:textSize="26sp" />
+
+            <!-- MENIU BUTOANE -->
+            <LinearLayout
+                android:id="@+id/mid_nav"
+                android:layout_width="match_parent"
+                android:layout_height="223dp"
+                android:background="@drawable/gradientwp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:weightSum="4">
+
+                <!-- Exemplu buton -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
+                    <ImageButton
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:background="@drawable/ic_add_money"
+                        android:contentDescription="Adaugă bani"
+                        android:scaleType="centerInside"
+                        android:padding="10dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Adaugă bani"
+                        android:fontFamily="@font/fontprincipal"
+                        android:textSize="12sp"/>
+                </LinearLayout>
+
+                <!-- Buton 2 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
+                    <ImageButton
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:background="@drawable/ic_transfer"
+                        android:contentDescription="Transfer"
+                        android:scaleType="centerInside"
+                        android:padding="10dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Transfer"
+                        android:fontFamily="@font/fontprincipal"
+                        android:textSize="12sp"/>
+                </LinearLayout>
+
+                <!-- Buton 3 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
+                    <ImageButton
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:background="@drawable/ic_account"
+                        android:contentDescription="Cont"
+                        android:scaleType="centerInside"
+                        android:padding="10dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cont"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/fontprincipal"/>
+                </LinearLayout>
+
+                <!-- Buton 4 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
+                    <ImageButton
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:background="@drawable/ic_cards"
+                        android:contentDescription="Cardurile mele"
+                        android:scaleType="centerInside"
+                        android:padding="10dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Carduri"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/fontprincipal"/>
+                </LinearLayout>
+
+                <!-- ... -->
+            </LinearLayout>
+
+            <!-- ANALYTICS + FUNDAL MOV -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#9661A0"
+                android:gravity="center">
+
+                <!-- Card Analytics -->
+                <LinearLayout
+                    android:layout_width="387dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-0dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/bg_card_analytics"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/fontprincipal"
+                        android:text="Analytics"
+                        android:textColor="@android:color/white"
+                        android:textSize="18sp"
+                        android:layout_marginBottom="8dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/fontprincipal"
+                        android:gravity="left"
+                        android:padding="5dp"
+                        android:text="   Descoperă widgeturile noastre personalizate
+pe baza cheltuielilor tale și predicțiile pentru lunile
+viitoare! (HINT: poți muta widgeturile în funcție de cât de relevante sunt
+pentru tine)"
+                        android:textColor="@android:color/white"
+                        android:textSize="11sp"/>
+                </LinearLayout>
+
+                <!-- Spațiu extins jos -->
+                <LinearLayout
+                    android:id="@+id/zona_extinsa_mov"
+                    android:layout_width="match_parent"
+                    android:layout_height="1000dp"
+                    android:orientation="vertical">
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- 🧠 MASCOTA FIXĂ ÎN COLȚ DREAPTA JOS -->
+    <ImageView
+        android:id="@+id/mascota_button"
+        android:layout_width="87dp"
+        android:layout_height="88dp"
+        android:layout_marginBottom="90dp"
+        android:background="@drawable/mascota"
+        android:clickable="true"
+        android:contentDescription="Mascota"
+        android:elevation="8dp"
+        android:focusable="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/mascota"
+        app:layout_constraintBottom_toTopOf="@id/bottom_nav"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- ⬇️ BARA DE JOS FIXĂ -->
+    <LinearLayout
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:orientation="horizontal"
+        android:background="@color/purple"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageButton
+            android:id="@+id/nav_home"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Home"
+            android:src="@drawable/ic_home"
+            android:scaleType="fitCenter" />
+
+        <ImageButton
+            android:id="@+id/discover"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_discover"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Discover"
+            android:scaleType="fitCenter" />
+
+        <ImageButton
+            android:id="@+id/goals"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_goals"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Goals"
+            android:scaleType="fitCenter" />
+
+        <ImageButton
+            android:id="@+id/simulation"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_simulation"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Simulate"
+            android:scaleType="fitCenter" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

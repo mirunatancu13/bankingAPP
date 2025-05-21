@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center"
+    android:background="#7a4587">
+
+    <TextView
+        android:id="@+id/welcomeText"
+        android:layout_width="261dp"
+        android:layout_height="94dp"
+        android:layout_marginTop="-100dp"
+        android:fontFamily="@font/fontprincipal"
+        android:gravity="center"
+        android:text="Introduceti ID client!"
+        android:textColor="@color/white"
+        android:textSize="24sp" />
+
+
+    <EditText
+        android:id="@+id/client_id_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="ID client"
+        android:textColor="@android:color/white"
+        android:textColorHint="#CCCCCC"
+        android:fontFamily="@font/fontprincipal"
+        android:backgroundTint="@android:color/white"
+        android:inputType="text"
+        android:padding="12dp" />
+
+    <Button
+        android:id="@+id/login_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Trimite"
+        android:backgroundTint="@color/purpledark"
+        android:fontFamily="@font/fontprincipal"
+        android:layout_marginTop="16dp" />
+
+</LinearLayout>

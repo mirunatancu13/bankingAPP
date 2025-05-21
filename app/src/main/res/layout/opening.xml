@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center"
+    android:background="#7a4587">
+
+    <ImageView
+        android:id="@+id/logoImageView"
+        android:layout_width="356dp"
+        android:layout_height="208dp"
+        android:layout_gravity="center"
+        android:contentDescription="Logo"
+        android:src="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/welcomeText"
+        android:layout_width="261dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/fontprincipal"
+        android:gravity="center"
+        android:text="Bine ai venit!"
+        android:textColor="@color/white"
+        android:textSize="24sp" />
+
+</LinearLayout>
