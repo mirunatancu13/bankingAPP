@@ -26,11 +26,5 @@ class SimulationActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
-
-        navGoals.setOnClickListener {
-            val intent = Intent(this, GoalsActivity::class.java)
-            startActivity(intent)
-            finish()
-        }
     }
 }

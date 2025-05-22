@@ -8,17 +8,17 @@
     android:gravity="center"
     android:background="#7a4587">
 
+
     <TextView
-        android:id="@+id/welcomeText"
+        android:id="@+id/clientlogin"
         android:layout_width="261dp"
         android:layout_height="94dp"
-        android:layout_marginTop="-100dp"
+        android:layout_marginTop="70dp"
         android:fontFamily="@font/fontprincipal"
         android:gravity="center"
         android:text="Introduceti ID client!"
         android:textColor="@color/white"
         android:textSize="24sp" />
-
 
     <EditText
         android:id="@+id/client_id_input"
@@ -37,6 +37,26 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Trimite"
+        android:backgroundTint="@color/purpledark"
+        android:fontFamily="@font/fontprincipal"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:id="@+id/agentlogin"
+        android:layout_width="261dp"
+        android:layout_height="94dp"
+        android:layout_marginTop="200dp"
+        android:fontFamily="@font/fontprincipal"
+        android:gravity="center"
+        android:text="Sau sunteti angajat al bancii?"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/login_agent_button"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Sunt angajat"
         android:backgroundTint="@color/purpledark"
         android:fontFamily="@font/fontprincipal"
         android:layout_marginTop="16dp" />

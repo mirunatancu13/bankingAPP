@@ -11,26 +11,12 @@ class DiscoverActivity : AppCompatActivity() {
 
         val navHome = findViewById<ImageButton>(R.id.nav_home)
         val navDiscover = findViewById<ImageButton>(R.id.discover)
-        val navGoals = findViewById<ImageButton>(R.id.goals)
-        val navSimulation = findViewById<ImageButton>(R.id.simulation)
-
         navHome.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
         }
 
-        navGoals.setOnClickListener {
-            val intent = Intent(this, GoalsActivity::class.java)
-            startActivity(intent)
-            finish()
-        }
-
-        navSimulation.setOnClickListener {
-            val intent = Intent(this, SimulationActivity::class.java)
-            startActivity(intent)
-            finish()
-        }
 
     }
 }

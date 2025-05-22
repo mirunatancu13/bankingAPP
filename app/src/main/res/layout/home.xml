@@ -74,7 +74,6 @@
                 android:layout_marginTop="4dp"
                 android:layout_gravity="center_horizontal"
                 android:fontFamily="@font/fontprincipal"
-                android:text="1234.56 LEI"
                 android:textColor="@color/purpledark"
                 android:textSize="26sp" />
 
@@ -278,24 +277,5 @@ pentru tine)"
             android:contentDescription="Discover"
             android:scaleType="fitCenter" />
 
-        <ImageButton
-            android:id="@+id/goals"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"
-            android:src="@drawable/ic_goals"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="Goals"
-            android:scaleType="fitCenter" />
-
-        <ImageButton
-            android:id="@+id/simulation"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"
-            android:src="@drawable/ic_simulation"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="Simulate"
-            android:scaleType="fitCenter" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

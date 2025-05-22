@@ -17,8 +17,10 @@ class MainActivity : AppCompatActivity() {
         val mainText = findViewById<TextView>(R.id.main_text)
         val navHome = findViewById<ImageButton>(R.id.nav_home)
         val navDiscover = findViewById<ImageButton>(R.id.discover)
-        val navGoals = findViewById<ImageButton>(R.id.goals)
-        val navSimulation = findViewById<ImageButton>(R.id.simulation)
+
+        val balance = intent.getStringExtra("BALANCE")?.toDoubleOrNull() ?: 0.0
+        val balanceTextView = findViewById<TextView>(R.id.suma_cont_curent)
+        balanceTextView.text = String.format("%.2f LEI", balance)
 
         navHome.setOnClickListener {
             // Dacă ești deja în Home, nu face nimic
@@ -30,21 +32,11 @@ class MainActivity : AppCompatActivity() {
             finish()
         }
 
-        navGoals.setOnClickListener {
-            val intent = Intent(this, GoalsActivity::class.java)
-            startActivity(intent)
-            finish()
-        }
-
-        navSimulation.setOnClickListener {
-            val intent = Intent(this, SimulationActivity::class.java)
-            startActivity(intent)
-            finish()
-        }
         val mascota = findViewById<ImageView>(R.id.mascota_button)
         mascota.setOnClickListener {
             val chatbot = ChatbotBottomSheet()
             chatbot.show(supportFragmentManager, "Chatbot")
         }
+
     }
 }

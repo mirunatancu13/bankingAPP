@@ -29,15 +29,6 @@ fun setupBottomNav(currentActivity: AppCompatActivity) {
         }
     }
 
-    navGoals.setOnClickListener {
-        if (currentActivity !is GoalsActivity) {
-            val intent = Intent(currentActivity, GoalsActivity::class.java)
-            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
-            currentActivity.startActivity(intent)
-            currentActivity.finish()
-        }
-    }
-
     navSimulation.setOnClickListener {
         if (currentActivity !is SimulationActivity) {
             val intent = Intent(currentActivity, SimulationActivity::class.java)

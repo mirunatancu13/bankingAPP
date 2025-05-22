@@ -2,26 +2,139 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F8F8F8">
 
-    <!-- Text central -->
-    <TextView
-        android:id="@+id/text_goals"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Pagina Discover"
-        android:textSize="24sp"
-        android:textColor="#000000"
-        android:fontFamily="@font/fontprincipal"
+    <!-- 🔽 TOT conținutul scrollabil e aici -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/bottom_nav"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="200dp" />
+        app:layout_constraintBottom_toTopOf="@+id/bottom_nav">
 
-    <!-- 🟣 Bara de jos fixă -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="0dp"
+            android:gravity="center_horizontal">
+
+
+            <LinearLayout
+                android:id="@+id/textnav"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginBottom="700dp"
+                android:orientation="horizontal"
+                android:background="@color/purple"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/text_goals"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="-30dp"
+                android:layout_marginTop="-850dp"
+                android:layout_marginBottom="30dp"
+                android:fontFamily="@font/fontprincipal"
+                android:gravity="left"
+                android:text="Bine ai venit pe pagina de Discover!"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp" />
+
+            <LinearLayout
+                android:id="@+id/card_info"
+                android:layout_width="350dp"
+                android:layout_height="293dp"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginBottom="50dp"
+                android:background="@drawable/bg_card_discover"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="284dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/fontprincipal"
+                    android:text="Aici puteti gasi ofertele care ti se potrivesc la magazinele tale preferate, in functie cheltuielile si preferintele tale si preferintele celorlalti clienti asemanatori cu tine.Sharing is caring"
+                    android:textColor="@color/purpledark"
+                    android:textSize="16sp"
+                    android:gravity="center"
+                    android:layout_marginTop="0dp"
+                    android:layout_gravity="center" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/cheltuielibara"
+                android:layout_width="500dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="80dp"
+                android:layout_marginBottom="200dp"
+                android:background="@drawable/bg_card_analytics"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="300dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="-150dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/fontprincipal"
+                    android:gravity="left"
+                    android:text="Pentru ca ai cheltuit cea mai mare suma pe"
+                    android:textColor="#FFFFFF" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ocupatiebara"
+                android:layout_width="460dp"
+                android:layout_marginLeft="-100dp"
+                android:layout_height="80dp"
+                android:layout_marginBottom="200dp"
+                android:background="@drawable/bg_card_analytics"
+                android:orientation="horizontal"
+                android:layout_gravity="start">
+
+                <TextView
+                    android:layout_width="300dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="120dp"
+                    android:layout_marginTop="0dp"
+                    android:fontFamily="@font/fontprincipal"
+                    android:gravity="center"
+                    android:text="Produse special pentru ocupatia ta"
+                    android:textColor="#FFFFFF" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/grupuribara"
+                android:layout_width="500dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="80dp"
+                android:layout_marginBottom="200dp"
+                android:background="@drawable/bg_card_analytics"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="300dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="-150dp"
+                    android:layout_marginTop="0dp"
+                    android:fontFamily="@font/fontprincipal"
+                    android:gravity="center"
+                    android:text="Pe alti utilizatori ii intereseaza"
+                    android:textColor="#FFFFFF" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- 🔒 Bara de jos rămâne fixă -->
     <LinearLayout
         android:id="@+id/bottom_nav"
         android:layout_width="match_parent"
@@ -49,26 +162,6 @@
             android:src="@drawable/ic_discover"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:contentDescription="Discover"
-            android:scaleType="fitCenter" />
-
-        <ImageButton
-            android:id="@+id/goals"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:src="@drawable/ic_goals"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="Goals"
-            android:scaleType="fitCenter" />
-
-        <ImageButton
-            android:id="@+id/simulation"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:src="@drawable/ic_simulation"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="Simulate"
             android:scaleType="fitCenter" />
     </LinearLayout>
 
