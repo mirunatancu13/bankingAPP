@@ -1,0 +1,173 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <!-- ScrollView cu conținutul aplicației -->
+    <ScrollView
+        android:id="@+id/scroll_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_nav">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- HEADER -->
+            <FrameLayout
+                android:id="@+id/container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:id="@+id/up_nav"
+                    android:layout_width="match_parent"
+                    android:layout_height="162dp"
+                    android:background="@drawable/gradient"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/main_text"
+                        android:layout_width="221dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="-120dp"
+                        android:fontFamily="@font/fontprincipal"
+                        android:gravity="left"
+                        android:text="Bine ati venit la MyOwly!"
+                        android:textColor="@color/purpledark"
+                        android:textSize="22sp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/logo_image"
+                    android:layout_width="241dp"
+                    android:layout_height="234dp"
+                    android:layout_marginStart="210dp"
+                    android:layout_marginTop="-20dp"
+                    android:contentDescription="Logo MyOwly"
+                    android:src="@drawable/asistentaibufni" />
+
+                <LinearLayout
+                    android:layout_width="387dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="200dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/bg_card_analytics"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/fontprincipal"
+                        android:text="Dashboard cu clienti"
+                        android:textColor="@android:color/white"
+                        android:textSize="18sp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginBottom="8dp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/fontprincipal"
+                        android:gravity="left"
+                        android:padding="5dp"
+                        android:text="Aici se afla sectiunea de dashboard unde
+poti analiza datele clientilor.Spor!"
+                        android:textColor="@android:color/white"
+                        android:textSize="11sp"/>
+                </LinearLayout>
+            </FrameLayout>
+
+            <!-- CONT CURENT -->
+
+            <TextView
+                android:id="@+id/suma_cont_curent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/fontprincipal"
+                android:textColor="@color/purpledark"
+                android:textSize="26sp" />
+
+            <!-- MENIU BUTOANE -->
+            <LinearLayout
+                android:id="@+id/mid_nav"
+                android:layout_width="match_parent"
+                android:layout_height="223dp"
+                android:background="@drawable/gradientwp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:weightSum="4">
+
+                <!-- Exemplu buton -->
+
+                <!-- Buton 2 -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"/>
+
+                <!-- Buton 3 -->
+
+                <!-- Buton 4 -->
+
+                <!-- ... -->
+            </LinearLayout>
+
+            <!-- ANALYTICS + FUNDAL MOV -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#9661A0"
+                android:gravity="center">
+
+                <!-- Spațiu extins jos -->
+                <LinearLayout
+                    android:id="@+id/zona_extinsa_mov"
+                    android:layout_width="match_parent"
+                    android:layout_height="1000dp"
+                    android:orientation="vertical">
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- 🧠 MASCOTA FIXĂ ÎN COLȚ DREAPTA JOS -->
+
+    <!-- ⬇ BARA DE JOS FIXĂ -->
+    <LinearLayout
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:orientation="horizontal"
+        android:background="@color/purple"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageButton
+            android:id="@+id/nav_home"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Home"
+            android:src="@drawable/ic_home"
+            android:scaleType="fitCenter" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -16,6 +16,7 @@ class LoginActivity : AppCompatActivity() {
 
     private lateinit var input: EditText
     private lateinit var button: Button
+    private lateinit var employeeButton: Button
     private lateinit var progressBar: ProgressBar
     private lateinit var apiManager: ApiManager
 
@@ -26,44 +27,41 @@ class LoginActivity : AppCompatActivity() {
         // Inițializare views
         input = findViewById(R.id.client_id_input)
         button = findViewById(R.id.login_button)
-
-        // Adaugă un ProgressBar în layout-ul tău sau creează unul programatic
+        employeeButton = findViewById(R.id.login_agent_button)
         progressBar = ProgressBar(this).apply {
             visibility = View.GONE
         }
 
-        // Inițializare ApiManager
         apiManager = ApiManager()
 
+        // Logare client
         button.setOnClickListener {
             val clientId = input.text.toString().trim()
-
             if (clientId.isEmpty()) {
                 input.error = "Te rog introdu un ID valid"
                 return@setOnClickListener
             }
-
-            // Verifică ID-ul clientului prin API
             verifyClientId(clientId)
         }
 
-        // Testează conexiunea la server (opțional)
+        // Buton logare angajat (fără verificare, doar acces direct)
+        employeeButton.setOnClickListener {
+            val intent = Intent(this@LoginActivity, AngajatActivity::class.java)
+            startActivity(intent)
+        }
+
         checkServerConnection()
     }
 
     private fun verifyClientId(clientId: String) {
-        // Afișează loading
         showLoading(true)
 
         apiManager.verifyClient(clientId, object : ApiManager.ApiCallback<ClientData> {
             override fun onSuccess(result: ClientData) {
                 runOnUiThread {
                     showLoading(false)
-
-                    // Salvează clientId în SharedPreferences
                     saveClientId(result.client_id)
 
-                    // Client găsit - navighează la MainActivity
                     Toast.makeText(
                         this@LoginActivity,
                         "Client găsit! Bun venit!",
@@ -82,8 +80,6 @@ class LoginActivity : AppCompatActivity() {
             override fun onError(error: String) {
                 runOnUiThread {
                     showLoading(false)
-
-                    // Afișează eroarea
                     input.error = error
                     Toast.makeText(
                         this@LoginActivity,
@@ -95,6 +91,7 @@ class LoginActivity : AppCompatActivity() {
         })
     }
 
+    // ✅ Salvează client ID în SharedPreferences
     private fun saveClientId(clientId: String) {
         val prefs = getSharedPreferences("bcr_prefs", MODE_PRIVATE)
         prefs.edit().putString("client_id", clientId).apply()
