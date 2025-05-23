@@ -60,6 +60,9 @@ class LoginActivity : AppCompatActivity() {
                 runOnUiThread {
                     showLoading(false)
 
+                    // Salvează clientId în SharedPreferences
+                    saveClientId(result.client_id)
+
                     // Client găsit - navighează la MainActivity
                     Toast.makeText(
                         this@LoginActivity,
@@ -90,6 +93,11 @@ class LoginActivity : AppCompatActivity() {
                 }
             }
         })
+    }
+
+    private fun saveClientId(clientId: String) {
+        val prefs = getSharedPreferences("bcr_prefs", MODE_PRIVATE)
+        prefs.edit().putString("client_id", clientId).apply()
     }
 
     private fun checkServerConnection() {
